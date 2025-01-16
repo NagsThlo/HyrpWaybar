@@ -1,0 +1,101 @@
+{
+    "height": 35,
+    "spacing": 4,
+    "layer": "top",
+    "position": "top",
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/layout",
+        "custom/media"
+    ],
+
+    "modules-center": [
+        "hyprland/window"
+    ],
+
+    "modules-right": [
+        "custom/pipewire_volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "clock",
+        "tray"
+    ],
+
+    "workspaces": {
+        "format": "{name}",
+        "format-focused": "[{name}]",
+        "disable-scroll": true
+    },
+
+    "layout": {
+        "format": "[Layout: {layout}]",
+        "on-click": "hyprctl dispatch layout next"
+    },
+
+    "window": {
+        "format": "[{title}]",
+        "max-length": 50,
+        "tooltip": false
+    },
+
+    "custom/media": {
+        "exec": "~/.config/waybar/media.sh",
+        "interval": 2,
+        "tooltip": false
+    },
+
+   "custom/pipewire_volume": {
+    "format": "{}",
+    "exec": "~/.config/waybar/pipewire_volume.sh",
+    "interval": 1,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    },
+
+    "network": {
+        "format-wifi": "{essid} {icon}",
+        "format-disconnected": "NETU BLYAT INTERNETA",
+        "tooltip-format": "Interface: {ifname}\nGateway: {gwaddr}\nSignal: {signalStrength}%",
+        "format-icons": {
+            "signal-weak": "•",
+            "signal-medium": "•)",
+            "signal-strong": "•))",
+            "signal-full": "•)))"
+        }
+    },
+
+    "bluetooth": {
+        "format": "BT: {icon}",
+        "format-icons": {
+            "on": "on",
+            "off": "--",
+            "disconnected": "NC"
+        },
+        "tooltip": true,
+        "on-click": "blueman-manager"
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "format": "Batt: {capacity}% {icon}",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format-icons": [
+            "▁", "▂", "▃", "▅", "▆", "▇", "█"
+        ]
+    },
+
+    "clock": {
+        "format": "[{:%Y-%m-%d %H:%M:%S}]",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "tray": {
+        "spacing": 10
+    }
+}

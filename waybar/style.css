@@ -1,0 +1,40 @@
+
+* {
+    font-family: "JetBrains Mono", monospace;
+    color: #ffffff; /* White text color */
+}
+
+#waybar {
+background: rgba(0, 0, 0, 0.8); /* Semitransparent black */
+border: 1px solid #444444; /* Dark gray border */
+}
+
+#workspaces button,
+#layout,
+#custom-media,
+#window,
+#pulseaudio,
+#network,
+#bluetooth,
+#battery,
+#clock,
+#tray {
+background-color: #222222; /* Dark gray */
+color: #ffffff; /* White text */
+padding: 5px 10px;
+margin: 2px;
+border-radius: 5px;
+}
+
+#custom-pipewire_volume {
+background-color: #222222; /* Dark gray */
+color: #ffffff; /* White text */
+padding: 5px 10px;
+margin: 2px;
+border-radius: 5px;
+}
+
+
+#tray {
+margin-right: 10px;
+}
